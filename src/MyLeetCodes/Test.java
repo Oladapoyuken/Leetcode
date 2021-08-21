@@ -1,10 +1,9 @@
 package MyLeetCodes;
 
-import com.sun.xml.internal.ws.addressing.WsaActionUtil;
 
-import java.math.BigInteger;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Test {
@@ -73,21 +72,17 @@ public class Test {
 
 
     public static void main(String[] args) {
-        String[] pat = new String[2];
-        String str = "abc";
-        String str_ = "def";
-        BigInteger x = BigInteger.valueOf(103);
-        int y = 12;
-        char z = '3';
+        List list = new ArrayList<>();
 
+        list.add(4);
+        list.add(-4);
+        list.add(0);
 
-
-
-        String s = "20000000000000000000";
-
-        System.out.println(x);
-
-//        str = str.substring(0, 1);
+        if (list.contains(0)) {
+            System.out.println("List contains zero");
+        } else {
+            System.out.println("NOTHING");
+        }
 
 
     }
