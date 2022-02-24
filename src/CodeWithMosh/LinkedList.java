@@ -57,7 +57,7 @@ public class LinkedList {
             head = tail = null;
             return;
         } else {
-            var preNode = getPrevious(head);
+            var preNode = getPrevious();
             preNode.next = null;
             tail = preNode;
         }
@@ -65,7 +65,7 @@ public class LinkedList {
         size--;
     }
 
-    private Node getPrevious(Node node) {
+    private Node getPrevious() {
         var iteNode = head;
         while (iteNode != null) {
             if (iteNode.next == tail) return iteNode;
@@ -133,7 +133,7 @@ public class LinkedList {
 
 
     private class Node {
-        private int value;
+        private final int value;
         private Node next;
 
         public Node(int value) {

@@ -32,6 +32,7 @@ public class Array {
     public void removeAt(int x) {
         if (x < 0 || length < x) {
             System.out.println("-1");
+
             return;
         }
         int[] newArr = new int[length - 1];

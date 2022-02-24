@@ -1,14 +1,13 @@
 package CodeWithMosh;
 
+
+import java.util.LinkedList;
+import java.util.List;
+
 public class Test {
 
     public static void main(String[] args) {
-        HashTable table = new HashTable();
-        table.put(6, "A");
-        table.put(8, "B");
-        table.put(11, "C");
-        table.remove(8);
+        List<Integer> list = new LinkedList<>();
 
-        System.out.println(table.get(11));
     }
 }

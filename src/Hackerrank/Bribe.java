@@ -7,29 +7,26 @@ public class Bribe {
     //UNSOLVED
 
     public static void minimumBribes(List<Integer> q) {
-        boolean chaos = false;
+        // Write your code here
         int bribes = 0;
-        int count = 1;
-        for (int i = 0; i < q.size(); i++) {
-            int member = q.get(i);
-            if (member > count) {
-                if (member - count > 2) {
-                    System.out.println("Too chaotic");
-                    chaos = true;
-                    break;
-                } else {
-                    bribes = bribes + member - count;
+        boolean chaotic = false;
+        for (int i = q.size() - 1; i >= 0; i--) {
+            for (int k = i - 1; k >= 0; k--) {
+                if (q.get(k) > q.get(i)) {
+                    bribes++;
+                    if ((q.get(k) - 1) - k > 2)
+                        chaotic = true;
                 }
             }
-
-            count++;
         }
-        if (!chaos) System.out.println(bribes);
+        System.out.println(bribes);
+
+        if (chaotic)
+            System.out.println("Too chaotic");
     }
 
     public static void main(String[] args) {
-
-        minimumBribes(List.of(1, 2, 5, 3, 7, 8, 6, 4));
+        minimumBribes(List.of(5, 1, 2, 3, 7, 8, 6, 4));
 
     }
 }

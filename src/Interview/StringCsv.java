@@ -11,6 +11,7 @@ public class StringCsv {
 
     public String solution(String S) {
         String[] result = S.split("\\s*\n\\s*");
+
         List<String> allGood = new ArrayList<>();
         for (String row : result) {
             List<String> cells = Arrays.asList(row.split("\\s*,\\s*"));

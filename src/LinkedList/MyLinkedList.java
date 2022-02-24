@@ -66,7 +66,6 @@ public class MyLinkedList {
 
     public class Node {
         public int value;
-
         private Node next;
 
         public void Node(int val) {
