@@ -2,12 +2,12 @@ package CodeWithMosh;
 
 import java.util.Arrays;
 
-public class Array {
+public class MyArray {
 
     int[] arr;
     private int length = 0;
 
-    public Array(int length) {
+    public MyArray(int length) {
 
     }
 

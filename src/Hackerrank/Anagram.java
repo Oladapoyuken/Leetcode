@@ -1,7 +1,11 @@
 package Hackerrank;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Anagram {
 
@@ -45,8 +49,22 @@ public class Anagram {
         return map;
     }
 
+
+    public static int sherlockAndAnagrams(String s) {
+        List<Character> list = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++)
+            list.add(s.charAt(i));
+
+        Map<Character, Integer> map = list.stream()
+                .collect(Collectors.toMap(Function.identity(), values -> 1, Integer::sum));
+        System.out.println(map);
+
+        return 1;
+    }
+
+
     public static void main(String[] args) {
-        int count = makeAnagram("cde", "abc");
+        int count = sherlockAndAnagrams("abba");
         System.out.println(count);
     }
 }

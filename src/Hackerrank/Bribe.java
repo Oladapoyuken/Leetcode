@@ -4,29 +4,32 @@ import java.util.List;
 
 public class Bribe {
 
-    //UNSOLVED
-
     public static void minimumBribes(List<Integer> q) {
-        // Write your code here
-        int bribes = 0;
+        int bribe = 0;
         boolean chaotic = false;
-        for (int i = q.size() - 1; i >= 0; i--) {
-            for (int k = i - 1; k >= 0; k--) {
-                if (q.get(k) > q.get(i)) {
-                    bribes++;
-                    if ((q.get(k) - 1) - k > 2)
-                        chaotic = true;
+        int i = q.size() - 2;
+        while (i >= 0 & chaotic == false) {
+            int count = 0;
+            for (int k = i + 1; k < q.size(); k++) {
+                if (q.get(k) < q.get(i)) {
+                    bribe++;
+                    count++;
+                }
+                if (count > 2) {
+                    chaotic = true;
+                    break;
                 }
             }
+            i--;
         }
-        System.out.println(bribes);
-
         if (chaotic)
             System.out.println("Too chaotic");
+        else
+            System.out.println(bribe);
     }
 
     public static void main(String[] args) {
-        minimumBribes(List.of(5, 1, 2, 3, 7, 8, 6, 4));
+        minimumBribes(List.of(1, 2, 5, 3, 7, 8, 6, 4));
 
     }
 }

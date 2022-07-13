@@ -17,7 +17,6 @@ public class RemoveElement {
                         break;
                     }
                 }
-
             }
             else {
                 result++;

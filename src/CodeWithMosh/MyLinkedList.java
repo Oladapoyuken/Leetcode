@@ -2,7 +2,7 @@ package CodeWithMosh;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList {
+public class MyLinkedList {
 
     int size;
     private Node head;
